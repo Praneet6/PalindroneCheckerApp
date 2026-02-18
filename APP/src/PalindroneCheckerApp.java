@@ -1,13 +1,40 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    IO.println(String.format("Hello and welcome!"));
-
-    for (int i = 1; i <= 5; i++) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        IO.println("i = " + i);
-    }
+///**
+// * MAIN CLASS - UseCase1PalindromeCheckerApp
+// *
+// * Use Case 1: Application Entry & Welcome Message
+// *
+// * Description:
+// * This class represents the entry point of the
+// * Palindrome Checker Management System.
+// *
+// * At this stage, the application:
+// * - Starts execution from the main() method
+// * - Displays a welcome message
+// * - Shows application version
+// *
+// * No palindrome logic is implemented yet.
+// *
+// * The goal is to establish a clear startup flow.
+// *
+// * @author Developer
+// * @version 1.0
+// */
+//
+public class PalindroneCheckerApp{
+//
+//    /**
+//     * Application entry point.
+//     *
+//     * This is the first method executed by the JVM
+//     * when the program starts.
+//     *
+//     * @param args Command-Line arguments
+//     */
+   public static void main(String[] args) {
+//
+       System.out.println("Welcome to the Palindrome Checker Management System");
+       System.out.println("Version : 1.0");
+        System.out.println("System initialized successfully.");
+//
+  }
 }
