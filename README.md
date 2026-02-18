@@ -1,1 +1,1 @@
-# PalindroneCheckerApp
+Hardcoded Palindrome Result
