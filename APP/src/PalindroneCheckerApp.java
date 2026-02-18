@@ -1,28 +1,30 @@
-public class PalindroneCheckerApp {
+public class PalindroneCheckerApp{
 
+    /**
+     * Application entry point for UC2.
+     *
+     * @param args Command-line arguments
+     */
     public static void main(String[] args) {
-        // Existing Use Case 1/2 code here
 
-        // Call UC3 logic
-        runUseCase3();
-    }
+        // Hardcoded input string
+        String input = "madam";
 
-    // Use Case 3 method
-    public static void runUseCase3() {
-        System.out.println("\n--- UC3: Palindrome Check Using String Reverse ---");
+        boolean isPalindrome = true;
 
-        String input = "racecar";
-        String reversed = "";
+        // Loop only till half of the string length
+        for (int i = 0; i < input.length() / 2; i++) {
 
-        // Reverse string
-        for (int i = input.length() - 1; i >= 0; i--) {
-            reversed += input.charAt(i);
+            if (input.charAt(i) != input.charAt(input.length() - 1 - i)) {
+                isPalindrome = false;
+                break;
+            }
         }
 
-        System.out.println("Original String: " + input);
-        System.out.println("Reversed String: " + reversed);
+        // Display result
+        System.out.println("Input String: " + input);
 
-        if (input.equals(reversed)) {
+        if (isPalindrome) {
             System.out.println("Result: The string is a Palindrome.");
         } else {
             System.out.println("Result: The string is NOT a Palindrome.");
