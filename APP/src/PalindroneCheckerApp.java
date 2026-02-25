@@ -1,42 +1,45 @@
-import java.util.*;
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Scanner;
 
-public class PalindromeCheckerUC6 {
+public class PalindromeCheckerUC7 {
 
     public static boolean isPalindrome(String input) {
+        if (input == null) return false;
 
-        // Remove spaces and convert to lowercase
+        // Normalize string: remove spaces, lowercase
         input = input.replaceAll("\\s+", "").toLowerCase();
 
-        Queue<Character> queue = new LinkedList<>();
-        Stack<Character> stack = new Stack<>();
+        Deque<Character> deque = new LinkedList<>();
 
-        // Step 1: Insert characters into Queue and Stack
+        // Step 1: Insert characters into deque
         for (char ch : input.toCharArray()) {
-            queue.add(ch);      // enqueue
-            stack.push(ch);     // push
+            deque.addLast(ch);
         }
 
-        // Step 2: Compare dequeue and pop
-        while (!queue.isEmpty()) {
-            if (!queue.remove().equals(stack.pop())) {
-                return false;
+        // Step 2: Compare front and rear
+        while (deque.size() > 1) {
+            if (!deque.removeFirst().equals(deque.removeLast())) {
+                return false; // Mismatch found
             }
         }
 
-        return true;
+        return true; // All characters matched
     }
 
     public static void main(String[] args) {
-
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter a string to check palindrome:");
+        System.out.println("=== Palindrome Checker (UC7: Deque Optimized) ===");
+        System.out.print("Enter a string: ");
         String input = scanner.nextLine();
 
-        if (isPalindrome(input)) {
-            System.out.println("The string is a Palindrome.");
+        boolean result = isPalindrome(input);
+
+        if (result) {
+            System.out.println("Result: It is a Palindrome ✅");
         } else {
-            System.out.println("The string is NOT a Palindrome.");
+            System.out.println("Result: It is NOT a Palindrome ❌");
         }
 
         scanner.close();

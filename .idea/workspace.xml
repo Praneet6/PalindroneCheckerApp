@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ada9b490-6193-414e-9e4d-938646faa52d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APP/src/PalindroneCheckerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/APP/src/PalindroneCheckerApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PalindroneCheckerApp/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PalindroneCheckerApp/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PalindroneCheckerApp/APP/APP.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PalindroneCheckerApp/APP/src/PalindroneCheckerApp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PalindroneCheckerApp/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PalindroneCheckerApp/java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PalindroneCheckerApp/liststudents.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +29,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "UC6",
+    "git-widget-placeholder": "UC7",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
