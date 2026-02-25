@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ada9b490-6193-414e-9e4d-938646faa52d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PalindroneCheckerApp/APP/src/PalindroneCheckerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/PalindroneCheckerApp/APP/src/PalindroneCheckerApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PalindroneCheckerApp/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/PalindroneCheckerApp/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP/src/PalindroneCheckerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/APP/src/PalindroneCheckerApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PalindroneCheckerApp/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PalindroneCheckerApp/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PalindroneCheckerApp/APP/APP.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PalindroneCheckerApp/APP/src/PalindroneCheckerApp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PalindroneCheckerApp/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PalindroneCheckerApp/java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PalindroneCheckerApp/liststudents.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,11 +21,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/PalindroneCheckerApp" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="39tmymiRDvb2ohTrApc5fIAOElR" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -30,22 +36,16 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "git-widget-placeholder": "main",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "UC6",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/user/OneDrive/Documents/RA2411032010026",
+    "last_opened_file_path": "C:/Users/Admin/Documents/PalindroneCheckerApp",
     "onboarding.tips.debug.path": "C:/Users/user/OneDrive/Documents/RA2411032010026/PalindroneCheckerApp/src/Main.java",
     "to.speed.mode.migration.done": "true"
   }
 }]]></component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.25557.131" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="ada9b490-6193-414e-9e4d-938646faa52d" name="Changes" comment="" />

@@ -1,49 +1,44 @@
-/**
- * PalindroneCheckerApp
- *
- * UC4: Character Array Based Palindrome Check
- * Goal: Check if a string is a palindrome using char array and two-pointer technique
- *
- * Author: Praneet Rathore
- * Version: 4.0
- */
-public class PalindroneCheckerApp {
+import java.util.*;
 
-    // UC4 Method
-    public static void runUseCase4() {
-        System.out.println("--- UC4: Character Array Based Palindrome Check ---");
+public class PalindromeCheckerUC6 {
 
-        // Hardcoded input string
-        String input = "racecar";
+    public static boolean isPalindrome(String input) {
 
-        // Convert string to character array
-        char[] chars = input.toCharArray();
+        // Remove spaces and convert to lowercase
+        input = input.replaceAll("\\s+", "").toLowerCase();
 
-        // Two-pointer approach
-        int start = 0;
-        int end = chars.length - 1;
-        boolean isPalindrome = true;
+        Queue<Character> queue = new LinkedList<>();
+        Stack<Character> stack = new Stack<>();
 
-        while (start < end) {
-            if (chars[start] != chars[end]) {
-                isPalindrome = false;
-                break;
+        // Step 1: Insert characters into Queue and Stack
+        for (char ch : input.toCharArray()) {
+            queue.add(ch);      // enqueue
+            stack.push(ch);     // push
+        }
+
+        // Step 2: Compare dequeue and pop
+        while (!queue.isEmpty()) {
+            if (!queue.remove().equals(stack.pop())) {
+                return false;
             }
-            start++;
-            end--;
         }
 
-        // Display results
-        System.out.println("Input String: " + input);
-        if (isPalindrome) {
-            System.out.println("Result: The string is a Palindrome.");
-        } else {
-            System.out.println("Result: The string is NOT a Palindrome.");
-        }
+        return true;
     }
 
-    // Main method
     public static void main(String[] args) {
-        runUseCase4(); // Call UC4
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter a string to check palindrome:");
+        String input = scanner.nextLine();
+
+        if (isPalindrome(input)) {
+            System.out.println("The string is a Palindrome.");
+        } else {
+            System.out.println("The string is NOT a Palindrome.");
+        }
+
+        scanner.close();
     }
 }
