@@ -1,47 +1,95 @@
-import java.util.Deque;
-import java.util.LinkedList;
 import java.util.Scanner;
 
-public class PalindromeCheckerUC7 {
+class Node {
+    char data;
+    Node next;
 
-    public static boolean isPalindrome(String input) {
-        if (input == null) return false;
+    Node(char data) {
+        this.data = data;
+        this.next = null;
+    }
+}
 
-        // Normalize string: remove spaces, lowercase
-        input = input.replaceAll("\\s+", "").toLowerCase();
+public class PalindromeChecker {
 
-        Deque<Character> deque = new LinkedList<>();
+    // Insert at end
+    static Node insert(Node head, char data) {
+        Node newNode = new Node(data);
+        if (head == null)
+            return newNode;
 
-        // Step 1: Insert characters into deque
-        for (char ch : input.toCharArray()) {
-            deque.addLast(ch);
+        Node temp = head;
+        while (temp.next != null)
+            temp = temp.next;
+
+        temp.next = newNode;
+        return head;
+    }
+
+    // Reverse linked list
+    static Node reverse(Node head) {
+        Node prev = null;
+        Node current = head;
+        Node next = null;
+
+        while (current != null) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        return prev;
+    }
+
+    // Check palindrome
+    static boolean isPalindrome(Node head) {
+        if (head == null || head.next == null)
+            return true;
+
+        Node slow = head;
+        Node fast = head;
+
+        // Find middle
+        while (fast.next != null && fast.next.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
         }
 
-        // Step 2: Compare front and rear
-        while (deque.size() > 1) {
-            if (!deque.removeFirst().equals(deque.removeLast())) {
-                return false; // Mismatch found
-            }
+        // Reverse second half
+        Node secondHalf = reverse(slow.next);
+
+        Node firstHalf = head;
+
+        // Compare halves
+        while (secondHalf != null) {
+            if (firstHalf.data != secondHalf.data)
+                return false;
+
+            firstHalf = firstHalf.next;
+            secondHalf = secondHalf.next;
         }
 
-        return true; // All characters matched
+        return true;
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
-        System.out.println("=== Palindrome Checker (UC7: Deque Optimized) ===");
         System.out.print("Enter a string: ");
-        String input = scanner.nextLine();
+        String input = sc.nextLine();
 
-        boolean result = isPalindrome(input);
+        Node head = null;
 
-        if (result) {
-            System.out.println("Result: It is a Palindrome ✅");
-        } else {
-            System.out.println("Result: It is NOT a Palindrome ❌");
+        // Convert string to linked list
+        for (char c : input.toCharArray()) {
+            head = insert(head, c);
         }
 
-        scanner.close();
+        if (isPalindrome(head))
+            System.out.println("The string is a Palindrome.");
+        else
+            System.out.println("The string is NOT a Palindrome.");
+
+        sc.close();
     }
 }
