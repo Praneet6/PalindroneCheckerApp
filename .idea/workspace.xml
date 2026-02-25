@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ada9b490-6193-414e-9e4d-938646faa52d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/APP/src/PalindroneCheckerApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/APP/src/PalindroneCheckerApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
