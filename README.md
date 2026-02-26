@@ -1,12 +1,15 @@
-UC4: Character Array Based Palindrome Check
-Goal: Convert string to character array and compare characters.
+09 UC8 - Linked List Based Palindrome Checker
+
+Goal:
+Check palindrome using singly linked list.
+
 Flow:
-Convert string to char[]
-Use two-pointer approach
-Compare start & end characters
-Key Concepts used in UC4:
-Character Array (char[]) – A primitive array used to store individual characters of a string for index-based access.
-Array Indexing – Accessing elements using index positions starting from 0.
-Two-Pointer Technique – One pointer starts from the beginning and the other from the end, reducing unnecessary comparisons.
-Time Complexity Awareness – Demonstrates efficient comparison without creating extra objects.
-Data Structure: char[]
+Convert string to linked list
+Reverse second half
+Compare halves
+Key Concepts:
+Singly Linked List – A dynamic data structure where elements are connected using node references.
+Node Traversal – Sequential access to elements using next references.
+Fast and Slow Pointer Technique – Used to find the middle of the linked list efficiently.
+In-Place Reversal – Reverses the second half of the list without extra memory.
+Data Structure: Singly Linked List

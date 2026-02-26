@@ -1,49 +1,95 @@
-/**
- * PalindroneCheckerApp
- *
- * UC4: Character Array Based Palindrome Check
- * Goal: Check if a string is a palindrome using char array and two-pointer technique
- *
- * Author: Praneet Rathore
- * Version: 4.0
- */
-public class PalindroneCheckerApp {
+import java.util.Scanner;
 
-    // UC4 Method
-    public static void runUseCase4() {
-        System.out.println("--- UC4: Character Array Based Palindrome Check ---");
+class Node {
+    char data;
+    Node next;
 
-        // Hardcoded input string
-        String input = "racecar";
+    Node(char data) {
+        this.data = data;
+        this.next = null;
+    }
+}
 
-        // Convert string to character array
-        char[] chars = input.toCharArray();
+public class PalindromeChecker {
 
-        // Two-pointer approach
-        int start = 0;
-        int end = chars.length - 1;
-        boolean isPalindrome = true;
+    // Insert at end
+    static Node insert(Node head, char data) {
+        Node newNode = new Node(data);
+        if (head == null)
+            return newNode;
 
-        while (start < end) {
-            if (chars[start] != chars[end]) {
-                isPalindrome = false;
-                break;
-            }
-            start++;
-            end--;
-        }
+        Node temp = head;
+        while (temp.next != null)
+            temp = temp.next;
 
-        // Display results
-        System.out.println("Input String: " + input);
-        if (isPalindrome) {
-            System.out.println("Result: The string is a Palindrome.");
-        } else {
-            System.out.println("Result: The string is NOT a Palindrome.");
-        }
+        temp.next = newNode;
+        return head;
     }
 
-    // Main method
+    // Reverse linked list
+    static Node reverse(Node head) {
+        Node prev = null;
+        Node current = head;
+        Node next = null;
+
+        while (current != null) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        return prev;
+    }
+
+    // Check palindrome
+    static boolean isPalindrome(Node head) {
+        if (head == null || head.next == null)
+            return true;
+
+        Node slow = head;
+        Node fast = head;
+
+        // Find middle
+        while (fast.next != null && fast.next.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        // Reverse second half
+        Node secondHalf = reverse(slow.next);
+
+        Node firstHalf = head;
+
+        // Compare halves
+        while (secondHalf != null) {
+            if (firstHalf.data != secondHalf.data)
+                return false;
+
+            firstHalf = firstHalf.next;
+            secondHalf = secondHalf.next;
+        }
+
+        return true;
+    }
+
     public static void main(String[] args) {
-        runUseCase4(); // Call UC4
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String input = sc.nextLine();
+
+        Node head = null;
+
+        // Convert string to linked list
+        for (char c : input.toCharArray()) {
+            head = insert(head, c);
+        }
+
+        if (isPalindrome(head))
+            System.out.println("The string is a Palindrome.");
+        else
+            System.out.println("The string is NOT a Palindrome.");
+
+        sc.close();
     }
 }
