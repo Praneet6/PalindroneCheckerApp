@@ -1,35 +1,39 @@
 import java.util.Scanner;
 import java.util.Stack;
 
-public class StackPalindromeChecker {
+import java.util.Scanner;
+
+public class PalindromeRecursive {
+
+    public static boolean isPalindrome(String str, int start, int end) {
+
+        // Base Condition
+        if (start >= end) {
+            return true;
+        }
+
+        // If characters do not match
+        if (str.charAt(start) != str.charAt(end)) {
+            return false;
+        }
+
+        // Recursive Call
+        return isPalindrome(str, start + 1, end - 1);
+    }
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
+
         System.out.print("Enter a string: ");
         String input = sc.nextLine();
 
-        // Remove spaces & convert to lowercase
-        String cleaned = input.replaceAll("\\s+", "").toLowerCase();
+        boolean result = isPalindrome(input, 0, input.length() - 1);
 
-        Stack<Character> stack = new Stack<>();
-
-        // Push characters into stack
-        for (char ch : cleaned.toCharArray()) {
-            stack.push(ch);
-        }
-
-        // Build reversed string using pop
-        String reversed = "";
-        while (!stack.isEmpty()) {
-            reversed += stack.pop();
-        }
-
-        // Compare original and reversed
-        if (cleaned.equals(reversed)) {
-            System.out.println("It is a Palindrome ✅");
+        if (result) {
+            System.out.println("It is a Palindrome.");
         } else {
-            System.out.println("Not a Palindrome ❌");
+            System.out.println("It is NOT a Palindrome.");
         }
 
         sc.close();
