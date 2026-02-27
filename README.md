@@ -6,7 +6,7 @@ Check palindrome using singly linked list.
 Flow:
 Convert string to linked list
 Reverse second half
-Compare halves
+then Compare halves
 Key Concepts:
 Singly Linked List – A dynamic data structure where elements are connected using node references.
 Node Traversal – Sequential access to elements using next references.
