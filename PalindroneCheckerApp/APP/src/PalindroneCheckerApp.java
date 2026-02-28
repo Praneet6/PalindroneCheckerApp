@@ -1,41 +1,60 @@
 import java.util.Scanner;
-import java.util.Stack;
 
-import java.util.Scanner;
+/**
+ * Use Case 10: Normalized Palindrome Validation
+ *
+ * Description:
+ * This class validates a palindrome after preprocessing
+ * the input string.
+ *
+ * Normalization includes:
+ *  - Removing spaces and symbols
+ *  - Converting to lowercase
+ *
+ * This ensures the palindrome check is logical rather
+ * than character-format dependent.
+ *
+ * Example:
+ * "A man a plan a canal Panama"
+ *
+ * @author Developer
+ * @version 10.0
+ */
 
-public class PalindromeRecursive {
+public class PalindroneCheckerApp {
 
-    public static boolean isPalindrome(String str, int start, int end) {
-
-        // Base Condition
-        if (start >= end) {
-            return true;
-        }
-
-        // If characters do not match
-        if (str.charAt(start) != str.charAt(end)) {
-            return false;
-        }
-
-        // Recursive Call
-        return isPalindrome(str, start + 1, end - 1);
-    }
-
+    /**
+     * Application entry point for UC10.
+     *
+     * @param args Command-line arguments
+     */
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Enter a string: ");
-        String input = sc.nextLine();
+        System.out.print("Input : ");
+        String input = scanner.nextLine();
 
-        boolean result = isPalindrome(input, 0, input.length() - 1);
+        // Step 1: Normalize string
+        // Remove spaces & symbols, convert to lowercase
+        String normalized = input.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
 
-        if (result) {
-            System.out.println("It is a Palindrome.");
-        } else {
-            System.out.println("It is NOT a Palindrome.");
+        // Step 2: Check palindrome
+        boolean isPalindrome = true;
+
+        // Compare characters from both ends
+        for (int i = 0; i < normalized.length() / 2; i++) {
+
+            // Compare symmetric characters
+            if (normalized.charAt(i) != normalized.charAt(normalized.length() - 1 - i)) {
+                isPalindrome = false;
+                break;
+            }
         }
 
-        sc.close();
+        // Step 3: Output result
+        System.out.println("Is Palindrome? : " + isPalindrome);
+
+        scanner.close();
     }
 }
