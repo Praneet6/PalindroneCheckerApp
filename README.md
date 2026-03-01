@@ -1,15 +1,14 @@
-09 UC8 - Linked List Based Palindrome Checker
+Palindrome Checker App
+The objective of the PalindromeChecker App is to design and implement a console-based Java application that validates whether a given string is a palindrome under different conditions, while strengthening core programming fundamentals and data structure concepts.
 
-Goal:
-Check palindrome using singly linked list.
-
+UC9: Recursive Palindrome Checker
+Goal: Check palindrome using recursion.
 Flow:
-Convert string to linked list
-Reverse second half
-Compare halves
-Key Concepts:
-Singly Linked List – A dynamic data structure where elements are connected using node references.
-Node Traversal – Sequential access to elements using next references.
-Fast and Slow Pointer Technique – Used to find the middle of the linked list efficiently.
-In-Place Reversal – Reverses the second half of the list without extra memory.
-Data Structure: Singly Linked List
+Recursive call compares start & end
+Base condition exits recursion
+Key Concepts used in UC9:
+Recursion – A technique where a method calls itself to solve smaller subproblems.
+Base Condition – Prevents infinite recursion and terminates the recursive calls.
+Call Stack – Memory structure used to manage method calls during recursion.
+Data Structure: Call Stack
+
