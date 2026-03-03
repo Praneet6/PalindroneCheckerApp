@@ -1,60 +1,66 @@
 import java.util.Scanner;
 
-/**
- * Use Case 10: Normalized Palindrome Validation
- *
- * Description:
- * This class validates a palindrome after preprocessing
- * the input string.
- *
- * Normalization includes:
- *  - Removing spaces and symbols
- *  - Converting to lowercase
- *
- * This ensures the palindrome check is logical rather
- * than character-format dependent.
- *
- * Example:
- * "A man a plan a canal Panama"
- *
- * @author Developer
- * @version 10.0
- */
+class PalindromeChecker {
 
-public class PalindroneCheckerApp {
+    private char[] stack;
+    private int top;
 
-    /**
-     * Application entry point for UC10.
-     *
-     * @param args Command-line arguments
-     */
-    public static void main(String[] args) {
+    // Constructor
+    public PalindromeChecker(int size) {
+        stack = new char[size];
+        top = -1;
+    }
 
-        Scanner scanner = new Scanner(System.in);
+    // Push operation
+    private void push(char ch) {
+        stack[++top] = ch;
+    }
 
-        System.out.print("Input : ");
-        String input = scanner.nextLine();
+    // Pop operation
+    private char pop() {
+        return stack[top--];
+    }
 
-        // Step 1: Normalize string
-        // Remove spaces & symbols, convert to lowercase
-        String normalized = input.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+    // Public method to check palindrome
+    public boolean checkPalindrome(String input) {
 
-        // Step 2: Check palindrome
-        boolean isPalindrome = true;
+        // Convert to lowercase and remove spaces
+        input = input.toLowerCase().replaceAll("\\s", "");
 
-        // Compare characters from both ends
-        for (int i = 0; i < normalized.length() / 2; i++) {
+        int length = input.length();
 
-            // Compare symmetric characters
-            if (normalized.charAt(i) != normalized.charAt(normalized.length() - 1 - i)) {
-                isPalindrome = false;
-                break;
+        // Push all characters into stack
+        for (int i = 0; i < length; i++) {
+            push(input.charAt(i));
+        }
+
+        // Compare with original string
+        for (int i = 0; i < length; i++) {
+            if (input.charAt(i) != pop()) {
+                return false;
             }
         }
 
-        // Step 3: Output result
-        System.out.println("Is Palindrome? : " + isPalindrome);
+        return true;
+    }
+}
 
-        scanner.close();
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String input = sc.nextLine();
+
+        PalindromeChecker checker = new PalindromeChecker(input.length());
+
+        if (checker.checkPalindrome(input)) {
+            System.out.println("It is a Palindrome!");
+        } else {
+            System.out.println("It is NOT a Palindrome!");
+        }
+
+        sc.close();
     }
 }
