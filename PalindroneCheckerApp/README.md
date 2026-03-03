@@ -1,15 +1,12 @@
 Palindrome Checker App
 The objective of the PalindromeChecker App is to design and implement a console-based Java application that validates whether a given string is a palindrome under different conditions, while strengthening core programming fundamentals and data structure concepts.
 
-Palindrome Checker App
-The objective of the PalindromeChecker App is to design and implement a console-based Java application that validates whether a given string is a palindrome under different conditions, while strengthening core programming fundamentals and data structure concepts.
-
-UC10: Case-Insensitive & Space-Ignored Palindrome
-Goal: Ignore spaces and case while checking a palindrome.
+UC11: Object-Oriented Palindrome Service
+Goal: Encapsulate palindrome logic in a class.
 Flow:
-Normalize string
-Apply previous logic
-Key Concepts used in UC10:
-String preprocessing
-Regular expressions
-Data Structure: String / Array
+Create PalindromeChecker class
+Expose checkPalindrome() method
+Key Concepts used in UC11 (OOPS):
+Encapsulation
+Single Responsibility Principle
+Data Structure: Internal (Stack / Array)
